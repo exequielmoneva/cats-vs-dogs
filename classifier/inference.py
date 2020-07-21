@@ -5,7 +5,7 @@ import tensorflow as tf
 
 SIZE = 150
 CLASSES = ['Cat', 'Dog']
-export_path = os.path.join(os.getcwd(), 'model', 'my_model.h5')
+export_path = os.path.join(os.getcwd(), 'model')
 stra = "cats-vs-dogs/classifier/model/my_model.h5"
 model = tf.keras.models.load_model(export_path)
 
