@@ -1,10 +1,13 @@
+import os
+
 import numpy as np
 import tensorflow as tf
 
 SIZE = 150
 CLASSES = ['Cat', 'Dog']
-
-model = tf.keras.models.load_model('model/my_model.h5')
+export_path = os.path.join(os.getcwd(), 'model', 'my_model.h5')
+stra = "cats-vs-dogs/classifier/model/my_model.h5"
+model = tf.keras.models.load_model(export_path)
 
 
 def get_prediction(image_path):
