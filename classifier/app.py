@@ -3,7 +3,7 @@ import os
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 
-import inference
+from classifier import inference
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)

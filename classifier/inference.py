@@ -4,6 +4,8 @@ import tensorflow as tf
 SIZE = 150
 CLASSES = ['Cat', 'Dog']
 
+model = tf.keras.models.load_model('model/my_model.h5')
+
 
 def get_prediction(image_path):
     image = tf.keras.preprocessing.image.load_img(
@@ -13,7 +15,6 @@ def get_prediction(image_path):
     image = tf.keras.applications.mobilenet_v2.preprocess_input(image)
     image = np.expand_dims(image, axis=0)
 
-    model = tf.keras.models.load_model('model/my_model.h5')
     response = model.predict(image)
     prediction = np.squeeze(response)
     class_name = CLASSES[int(prediction > 0.5)]
