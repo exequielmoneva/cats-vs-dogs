@@ -6,7 +6,7 @@ import tensorflow as tf
 SIZE = 150
 CLASSES = ['Cat', 'Dog']
 export_path = os.path.join(os.getcwd(), 'model')
-stra = "classifier/model/saved_model.pb"
+stra = "classifier/model"
 model = tf.keras.models.load_model(stra)
 
 
