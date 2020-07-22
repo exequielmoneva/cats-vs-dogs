@@ -18,7 +18,8 @@ def index():
     if request.method == 'POST':
         uploaded_file = request.files['file']
         if uploaded_file.filename != '':
-            image_path = os.path.join('static', uploaded_file.filename)
+            image_path = os.path.join('classifier/static',
+                                      uploaded_file.filename)
             uploaded_file.save(image_path)
             class_name = inference.get_prediction(image_path)
             print('CLASS NAME=', class_name)
