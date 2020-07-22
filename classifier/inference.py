@@ -6,8 +6,8 @@ import tensorflow as tf
 SIZE = 150
 CLASSES = ['Cat', 'Dog']
 export_path = os.path.join(os.getcwd(), 'model')
-stra = "cats-vs-dogs/classifier/model/my_model.h5"
-model = tf.keras.models.load_model(export_path)
+stra = "classifier/model/saved_model.pb"
+model = tf.keras.models.load_model(stra)
 
 
 def get_prediction(image_path):
